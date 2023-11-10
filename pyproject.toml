@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "trials"
+version = "0.1.0"
+description = ""
+authors = ["cotZhong <M202270082@hust.edu.cn>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

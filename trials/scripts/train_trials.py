@@ -1,4 +1,9 @@
 import os
+import sys
+
+sys.path.append('.')
+print(sys.path)
+
 
 import gym
 import numpy as np
@@ -22,8 +27,8 @@ from trials.networks.callbacks import (
 from trials.networks.env import ReinforceTradingEnv
 from trials.networks.feature_extractor import FEATURE_EXTRACTORS
 from trials.networks.policy_network import PairSelectionActorCriticPolicy
-
-
+# os.chdir('..')
+# print(os.getcwd())
 def load_data(path, file_name):
     df = pd.read_csv(
         path + file_name,
@@ -71,6 +76,7 @@ def build_dataset(train, valid, test, asset_number, feature_dim):
     )
 
     # T x N x M
+    
     train_value = train.values.astype(float).reshape(
         train_size, asset_number, feature_dim
     )
@@ -351,12 +357,12 @@ def train(args, run_id):
 def main(
     log_dir: str = "log",
     saved_model_dir: str = "saved_model",
-    rolling_dataset_path: str = "trials/data/",
+    rolling_dataset_path: str = r"D:\option+and+optimization\option and optimization\Transquant\HRL_Select_and_Trade\trials\trials\data\U.S.S&P500\\",
     policy: str = "simple_serial_selection",
     feature_extractor: str = "mlp",
     trading_feature_extractor: str = "lstm",
     asset_attention: bool = False,
-    rolling_serial: int = 1,
+    rolling_serial: int = 0,
     asset_num: int = 30,
     feature_dim: int = 3,
     feature_extractor_hidden_dim: int = 64,
@@ -455,4 +461,5 @@ def main(
 
 
 if __name__ == "__main__":
+    # main()
     typer.run(main)
