@@ -2,7 +2,7 @@ import os
 import sys
 
 sys.path.append('.')
-print(sys.path)
+# print(sys.path)
 
 
 import gym
@@ -357,13 +357,13 @@ def train(args, run_id):
 def main(
     log_dir: str = "log",
     saved_model_dir: str = "saved_model",
-    rolling_dataset_path: str = r"/home/melonbread404/trials/trials/data/U.S.S&P500/",
+    rolling_dataset_path: str = r"/home/melonbread404/trials/trials/data/CN_Index/",
     policy: str = "simple_serial_selection",
     feature_extractor: str = "mlp",
     trading_feature_extractor: str = "lstm",
     asset_attention: bool = False,
     rolling_serial: int = 0,
-    asset_num: int = 30,
+    asset_num: int = 4,
     feature_dim: int = 3,
     feature_extractor_hidden_dim: int = 64,
     feature_extractor_num_layers: int = 1,
@@ -372,14 +372,14 @@ def main(
     seed: int = 13,
     patience_steps: int = 0,
     eval_freq: int = 32,
-    train_steps: int = 1e4,
+    train_steps: int = 10,     ## 
     learning_rate: float = 1e-4,
     dropout: float = 0.5,
     rl_gamma: float = 1,
     ent_coef: float = 1e-4,
     project: str = "learning_to_pair",
     entity: str = "jimin",
-    trading_train_steps: int = 1e3,
+    trading_train_steps: int = 10,      ## 
     trading_feature_extractor_feature_dim: int = 3,
     trading_feature_extractor_num_layers: int = 1,
     trading_feature_extractor_hidden_dim: int = 64,

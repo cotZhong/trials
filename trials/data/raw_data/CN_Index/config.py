@@ -1,0 +1,17 @@
+"""
+Configures
+"""
+
+CODES = [
+    '000016.SH',
+    '000300.SH',
+    '000905.SH',
+    '000852.SH',
+]
+
+
+START_DATE = '2005-01-01'
+END_DATE = '2023-11-10'
+
+
+SPLIT_VALID, SPLIT_TEST = 252, 252
