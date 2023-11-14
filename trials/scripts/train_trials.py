@@ -357,7 +357,7 @@ def train(args, run_id):
 def main(
     log_dir: str = "log",
     saved_model_dir: str = "saved_model",
-    rolling_dataset_path: str = r"D:\option+and+optimization\option and optimization\Transquant\HRL_Select_and_Trade\trials\trials\data\U.S.S&P500\\",
+    rolling_dataset_path: str = r"/home/melonbread404/trials/trials/data/U.S.S&P500/",
     policy: str = "simple_serial_selection",
     feature_extractor: str = "mlp",
     trading_feature_extractor: str = "lstm",
@@ -456,6 +456,7 @@ def main(
         sync_tensorboard=False,
         monitor_gym=False,
         dir="/data/user_name",
+        mode='offline'
     )
     train(wandb.config, run.id)
 
