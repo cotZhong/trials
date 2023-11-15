@@ -359,7 +359,7 @@ def main(
     saved_model_dir: str = "saved_model",
     rolling_dataset_path: str = r"/home/melonbread404/trials/trials/data/CN_Index/",
     policy: str = "simple_serial_selection",
-    feature_extractor: str = "mlp",
+    feature_extractor: str = "gru",
     trading_feature_extractor: str = "lstm",
     asset_attention: bool = False,
     rolling_serial: int = 0,
@@ -372,14 +372,14 @@ def main(
     seed: int = 13,
     patience_steps: int = 0,
     eval_freq: int = 32,
-    train_steps: int = 10,     ## 
+    train_steps: int = 1e1,     ## 
     learning_rate: float = 1e-4,
     dropout: float = 0.5,
     rl_gamma: float = 1,
     ent_coef: float = 1e-4,
     project: str = "learning_to_pair",
-    entity: str = "jimin",
-    trading_train_steps: int = 10,      ## 
+    entity: str = "yiheng",
+    trading_train_steps: int = 1e2,      ## 
     trading_feature_extractor_feature_dim: int = 3,
     trading_feature_extractor_num_layers: int = 1,
     trading_feature_extractor_hidden_dim: int = 64,

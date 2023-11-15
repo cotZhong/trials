@@ -36,6 +36,10 @@ def split_data(
     valid = df[len(df) - split_valid - split_test: len(df) - split_test]
     test = df[len(df) - split_test: ]
     
+    train.index = pd.to_datetime(train.index, format='%Y/%m/%d')
+    valid.index = pd.to_datetime(valid.index, format='%Y/%m/%d')
+    test.index = pd.to_datetime(test.index, format='%Y/%m/%d')
+    
     train.to_csv(
         r'/home/melonbread404/trials/trials/data/CN_Index/train_rolling_1.csv'
     )
